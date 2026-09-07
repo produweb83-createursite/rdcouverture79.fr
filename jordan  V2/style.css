@@ -119,6 +119,10 @@ svg{display:block}
 .section-head>p{max-width:400px;color:var(--muted);line-height:1.7}
 .services{background:var(--soft)}
 .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+/* Déroulé du chantier : même carte que les prestations, sur 4 colonnes. */
+.etapes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.etapes-grid .service-card{min-height:225px}
+.etapes-grid .service-card p{max-width:none}
 .service-card{position:relative;background:#fff;border:1px solid var(--line);padding:30px;border-radius:24px;min-height:245px;overflow:hidden;transition:.35s cubic-bezier(.2,.8,.2,1)}
 .service-card:after{content:"";position:absolute;right:-45px;bottom:-65px;width:160px;height:160px;border-radius:50%;border:28px solid rgba(10,47,92,.04)}
 .service-card:hover{transform:translateY(-7px);box-shadow:0 18px 45px rgba(3,34,70,.09);border-color:rgba(10,47,92,.16)}
@@ -199,20 +203,20 @@ footer{background:var(--navy2);color:#aebbd0;padding:32px 0}
 @keyframes spin{to{transform:rotate(360deg)}}
 
 @media(max-width:1000px){
-  .testi-grid{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr}.etapes-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:900px){
   .site-header{height:74px}.nav{position:absolute;top:74px;left:15px;right:15px;background:#fff;padding:18px;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.12);display:none;flex-direction:column;gap:6px}.nav.open{display:flex}.nav a{padding:10px 6px;border-radius:10px}.nav a:hover{background:rgba(10,47,92,.06)}.header-call span:not(.dot){display:none}.header-call{margin-left:auto;padding:12px}.menu-btn{display:block}
   .quick-bubbles{right:14px;bottom:18px;gap:10px}.bubble{width:48px;height:48px}.bubble-call{width:54px;height:54px}
   .hero{padding-top:118px}.hero-grid{grid-template-columns:1fr;gap:55px}.hero-copy{text-align:center}.eyebrow{justify-content:center}.hero-text{margin:auto}.hero-actions,.hero-trust{justify-content:center}.hero-photo{height:400px}.hero-card{left:15px}
-  .section-head{display:block}.section-head>p{margin-top:20px}.service-grid{grid-template-columns:repeat(2,1fr)}
+  .section-head{display:block}.section-head>p{margin-top:20px}.service-grid,.etapes-grid{grid-template-columns:repeat(2,1fr)}
   .stats-grid{grid-template-columns:1fr;gap:26px}
   .about-grid{grid-template-columns:1fr;gap:35px}.about-art{height:420px}.about-copy{text-align:center}.check-list{text-align:left;max-width:430px;margin-left:auto;margin-right:auto}
   .cta-inner{grid-template-columns:1fr}.cta-copy{text-align:center}.cta-actions{align-items:center}
 }
 @media(max-width:620px){
   .container{width:min(calc(100% - 28px),1180px)}.header-call{padding:10px}.hero{min-height:auto;padding-bottom:90px}.hero h1{font-size:38px}.hero-actions{flex-direction:column}.hero-actions .btn{width:100%}.hero-trust{gap:10px;flex-wrap:wrap}.hero-trust div{padding-right:12px;margin-right:12px}.hero-photo{height:280px}.hero-card{position:relative;left:auto;bottom:auto;margin:-35px 20px 0;z-index:4}
-  .section{padding:80px 0}.section-head h2{font-size:34px}.service-grid,.before-after-grid{grid-template-columns:1fr}.service-card{min-height:210px}.service-strip{justify-content:flex-start}.ba{height:270px}
+  .section{padding:80px 0}.section-head h2{font-size:34px}.service-grid,.etapes-grid,.before-after-grid{grid-template-columns:1fr}.service-card{min-height:210px}.service-strip{justify-content:flex-start}.ba{height:270px}
   .about-photo,.about-ring{width:280px;height:280px}.about-art{height:320px}.about-art>span{right:20px;bottom:0}
   .footer-inner{flex-direction:column;text-align:center}
 }
