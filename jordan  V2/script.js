@@ -4,16 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 
-  /* ---- loader ---- */
-  var loader = document.getElementById('loader');
-  window.addEventListener('load', function () {
-    setTimeout(function () {
-      if (loader) loader.classList.add('done');
-    }, 500);
-  });
-  // safety fallback in case load event is slow/blocked
-  setTimeout(function () { if (loader) loader.classList.add('done'); }, 2500);
-
   /* ---- header scroll state ---- */
   var header = document.getElementById('header');
   function onScroll() {
