@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://rdcouverture79.fr/sitemap.xml
