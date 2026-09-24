@@ -320,7 +320,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <div class="video-frame">
-          <video class="lazy-video" muted loop playsinline preload="none" poster="img/hydrofuge-toiture-deux-sevres-poster.webp" width="540" height="960" data-src="img/hydrofuge-toiture-deux-sevres.mp4" aria-label="Application d'un hydrofuge coloré sur une toiture en tuiles en Deux-Sèvres"></video>
+          <video class="lazy-video" muted loop playsinline preload="none" poster="img/hydrofuge-toiture-deux-sevres-poster.webp" width="540" height="960" data-src="https://cdn.jsdelivr.net/gh/produweb83-createursite/rdcouverture79.fr@de37a0d/img/hydrofuge-toiture-deux-sevres.mp4" data-fallback="img/hydrofuge-toiture-deux-sevres.mp4" aria-label="Application d'un hydrofuge coloré sur une toiture en tuiles en Deux-Sèvres"></video>
         </div>
       </div>
       <script>
@@ -329,6 +329,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           if (!v) return;
           var calme = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
           function charger() { if (!v.getAttribute('src')) { v.setAttribute('src', v.dataset.src); } }
+          v.addEventListener('error', function () { if (v.dataset.fallback && v.getAttribute('src') !== v.dataset.fallback) { v.setAttribute('src', v.dataset.fallback); v.play().catch(function () {}); } });
           if (calme) { v.setAttribute('controls', ''); charger(); return; }
           if (!('IntersectionObserver' in window)) { charger(); v.play().catch(function () {}); return; }
           new IntersectionObserver(function (entries) {
