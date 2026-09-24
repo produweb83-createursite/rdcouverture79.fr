@@ -52,7 +52,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,440;9..144,560;9..144,680&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 <meta name="google-site-verification" content="LsH7a8GisojSp0GFgzRaSS8YMgCe4MSV8OvgkdYM3MY" />
 </head>
 <body>
@@ -308,6 +308,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </article>
 
       </div>
+
+      <div class="video-feature reveal">
+        <div class="video-text">
+          <span class="eyebrow"><i></i> En vidéo</span>
+          <h3>Hydrofuge coloré,<br><em>en pleine application.</em></h3>
+          <p>Sur ce chantier en Deux-Sèvres, on applique un hydrofuge coloré au pulvérisateur : les tuiles retrouvent leur teinte et restent protégées de l'eau et de la mousse pendant des années.</p>
+          <div class="video-actions">
+            <a class="btn btn-orange" href="tel:+33602297800">Appeler pour un devis <span>↗</span></a>
+            <a class="video-link" href="/demoussage-hydrofuge-toiture-niort">Démoussage & hydrofuge →</a>
+          </div>
+        </div>
+        <div class="video-frame">
+          <video class="lazy-video" muted loop playsinline preload="none" poster="img/hydrofuge-toiture-deux-sevres-poster.webp" width="540" height="960" data-src="img/hydrofuge-toiture-deux-sevres.mp4" aria-label="Application d'un hydrofuge coloré sur une toiture en tuiles en Deux-Sèvres"></video>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var v = document.querySelector('.lazy-video');
+          if (!v) return;
+          var calme = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          function charger() { if (!v.getAttribute('src')) { v.setAttribute('src', v.dataset.src); } }
+          if (calme) { v.setAttribute('controls', ''); charger(); return; }
+          if (!('IntersectionObserver' in window)) { charger(); v.play().catch(function () {}); return; }
+          new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) { charger(); v.play().catch(function () {}); }
+              else if (v.getAttribute('src')) { v.pause(); }
+            });
+          }, { rootMargin: '150px' }).observe(v);
+        })();
+      </script>
 
       <div class="chantiers-recents reveal">
         <h3 class="gallery-title">Chantiers récents en Deux-Sèvres</h3>
